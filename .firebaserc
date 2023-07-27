@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "penguin-room": {
+      "hosting": {
+        "penguin-room": [
+          "penguin-room"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "penguin-room"
+  }
+}
