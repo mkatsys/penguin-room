@@ -1,0 +1,17 @@
+.room{
+    width: 1033px;
+    margin: 70px auto;
+    border: 1px solid rgba(black, 0.12);
+    height: 570px;
+    background-image: url(../../assets/imges/back.jpg);
+    &__floor {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 40px;
+        width: 100%;
+    }
+}
+.penguin{
+    text-align: center;
+}
