@@ -15,11 +15,17 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
+
+import {FormsModule} from '@angular/forms';
+import {NgFor} from '@angular/common';
+import {MatSelectModule} from '@angular/material/select';
+
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { RoomComponent } from './room/room.component';
 import { PenguinListComponent } from './penguin-list/penguin-list.component';
 import { PenguinDetailComponent } from './penguin-detail/penguin-detail.component';
 import { PenguinNotFoundComponent } from './error/penguin-not-found/penguin-not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +49,9 @@ import { PenguinNotFoundComponent } from './error/penguin-not-found/penguin-not-
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    FormsModule,
+    NgFor,
+    MatSelectModule,
     DragDropModule
   ],
   providers: [],
