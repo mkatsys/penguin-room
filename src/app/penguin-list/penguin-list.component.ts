@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PENGUINS } from '../model/penguins';
 import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray} from '@angular/cdk/drag-drop';
+import { PenguinlistClickService } from '../services/penguinlist-click.service';
 
 @Component({
   selector: 'app-penguin-list',
@@ -11,7 +12,7 @@ export class PenguinListComponent implements OnInit {
 
   penguins = PENGUINS;
 
-  constructor(
+  constructor(private service: PenguinlistClickService
     ) {
      console.log('constructor');
     }
@@ -19,6 +20,10 @@ export class PenguinListComponent implements OnInit {
     ngOnInit() {
       console.log('ngOnInit');
     }
+
+  click(penguin: any){
+    this.service.setClick(penguin);
+  }
   
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.penguins, event.previousIndex, event.currentIndex);

@@ -1,8 +1,13 @@
 
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>penguin name</mat-label>
+      <input matInput placeholder="エンペラーペンギン">
+    </mat-form-field>
+  </form>
 <div cdkDropList class="grid" (cdkDropListDropped)="drop($event)">
-    <!-- clic()のイベントを入れる -->
     <mat-card *ngFor="let penguin of penguins" cdkDrag> 
         <img src="/assets/imges/{{penguin.img}}.png" alt="画像">
-        <a routerLink="detail/{{ penguin.no }}"><p>{{penguin.name}}</p></a>
+        <a routerLink="detail/{{ penguin.no }}" (click)="click(penguin)"><p>{{penguin.name}}</p></a>
     </mat-card>
 </div>
