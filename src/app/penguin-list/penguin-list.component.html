@@ -1,26 +1,26 @@
-
+<br>
 <form class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>penguin name</mat-label>
-      <input matInput placeholder="エンペラーペンギン">
+      <input  [(ngModel)]="penguinsInterface.name" matInput placeholder="エンペラーペンギン" name="penguinname">
     </mat-form-field>
     <mat-form-field class="example-full-width">
         <mat-label>Favorite food</mat-label>
-        <mat-select [(ngModel)]="selectedValue" name="penguin">
-            <mat-option>--</mat-option>
+        <mat-select [(ngModel)]="penguinsInterface.types" name="penguintype">
+            <mat-option [value]="">--</mat-option>
             <mat-option *ngFor="let penguinli of penguinslist" [value]="penguinli">
                 {{penguinli}}
             </mat-option>
         </mat-select>
-    </mat-form-field><p> Selected food: {{selectedValue}} </p>
+    </mat-form-field><p> Selected food: {{penguinsInterface.types}} </p>
     <br>
     <div class="example-button">
-        <button mat-raised-button color="primary">Submit</button>
+        <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
     </div>
 </form>
-<br><br>
+<br><br><br>
 <div cdkDropList class="grid" (cdkDropListDropped)="drop($event)">
-    <mat-card *ngFor="let penguin of penguins" cdkDrag> 
+    <mat-card *ngFor="let penguin of penguinsSearch" cdkDrag> 
         <img src="/assets/imges/{{penguin.img}}.png" alt="画像">
         <a routerLink="detail/{{ penguin.no }}" (click)="click(penguin)"><p>{{penguin.name}}</p></a>
     </mat-card>

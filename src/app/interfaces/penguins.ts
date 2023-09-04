@@ -1,7 +1,7 @@
 export interface Penguins {
     // no : number ;
-    // name : string ;
-    // types : string ;
+    name : string ;
+    types : string ;
     // eTypes : string ;
     // img : string ;
     // disabled : boolean ;
