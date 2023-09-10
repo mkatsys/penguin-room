@@ -6,7 +6,7 @@ import { PenguinlistClickService } from '../services/penguinlist-click.service';
 
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-import {NgFor} from '@angular/common';
+// import {NgFor} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
@@ -52,40 +52,36 @@ export class PenguinListComponent implements OnInit {
   }
   onSubmit(){
     console.log('onSubmit');
-    console.log(this.penguinsInterface.name);
-    console.log(this.penguinsInterface.types);
-    if(!this.penguinsInterface.types){
-      this.penguinsInterface.types = "";
+    let name = this.penguinsInterface.name;
+    let types = this.penguinsInterface.types;
+
+    if(!types){
+      types = "";
     }
-    if(this.penguinsInterface.name != "" && this.penguinsInterface.types != ""){
-      let number = 0;
-      for (let i = 0; i < this.penguins.length; i++) {
-        if(this.penguins[i].name.includes(this.penguinsInterface.name) && this.penguinsInterface.types == this.penguins[i].types){
-          this.penguinsSearch[number] = this.penguins[i]
-          number++;
-        }
-      }
-      this.penguinsSearch.length = number;
-    }else if(this.penguinsInterface.name != ""){
-      let number = 0;
-      for (let i = 0; i < this.penguins.length; i++) {
-        if(this.penguins[i].name.includes(this.penguinsInterface.name)){
-          this.penguinsSearch[number] = this.penguins[i]
-          number++;
-        }
-      }
-      this.penguinsSearch.length = number;
-    }else if(this.penguinsInterface.types != ""){
-      let number = 0;
-      for (let i = 0; i < this.penguins.length; i++) {
-        if(this.penguinsInterface.types == this.penguins[i].types){
-          this.penguinsSearch[number] = this.penguins[i]
-          number++;
-        }
-      }
-      this.penguinsSearch.length = number;
+
+    if(name == "" && types == ""){
+      this.penguinsSearch = PENGUINS.map( list => ({...list}));
     }else{
-      this.penguinsSearch = this.penguins.map( list => ({...list}));
+      let number = 0;
+      for (let i = 0; i < this.penguins.length; i++) {
+        if(name != "" && types != ""){
+          if(this.penguins[i].name.includes(name) && this.penguins[i].types == types){
+            this.penguinsSearch[number] = this.penguins[i]
+            number++;
+          }
+        }else if(name != ""){
+          if(this.penguins[i].name.includes(name)){
+            this.penguinsSearch[number] = this.penguins[i]
+            number++;
+          }
+        }else if(types != ""){
+          if(this.penguins[i].types == types){
+            this.penguinsSearch[number] = this.penguins[i]
+            number++;
+          }
+        }
+      }
+      this.penguinsSearch.length = number;
     }
   }
   
