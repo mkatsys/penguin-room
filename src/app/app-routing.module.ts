@@ -4,6 +4,7 @@ import { RoomComponent } from './room/room.component';
 import { PenguinListComponent } from './penguin-list/penguin-list.component';
 import { PenguinDetailComponent } from './penguin-detail/penguin-detail.component';
 import { PenguinNotFoundComponent } from './error/penguin-not-found/penguin-not-found.component';
+import { PenguinLoginComponent } from './penguin-login/penguin-login.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,11 @@ const routes: Routes = [
     //リスト
     path:'list',
     component: PenguinListComponent
+  },
+  {
+    //ログイン
+    path:'login',
+    component: PenguinLoginComponent
   },{
     //詳細画面
     path:'list/detail/:id',

@@ -26,6 +26,7 @@ import { RoomComponent } from './room/room.component';
 import { PenguinListComponent } from './penguin-list/penguin-list.component';
 import { PenguinDetailComponent } from './penguin-detail/penguin-detail.component';
 import { PenguinNotFoundComponent } from './error/penguin-not-found/penguin-not-found.component';
+import { PenguinLoginComponent } from './penguin-login/penguin-login.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { PenguinNotFoundComponent } from './error/penguin-not-found/penguin-not-
     RoomComponent,
     PenguinListComponent,
     PenguinDetailComponent,
-    PenguinNotFoundComponent
+    PenguinNotFoundComponent,
+    PenguinLoginComponent
   ],
   imports: [
     BrowserModule,
