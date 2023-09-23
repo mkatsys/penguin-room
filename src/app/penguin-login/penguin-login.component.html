@@ -1,11 +1,33 @@
 <p>penguin-login works!</p>
 
 <form class="login-form" #f="ngForm" (ngSubmit)="addData(f)">
-    <input type="text" name="name" ngModel>
+    <input type="text" name="name" placeholder="Name" ngModel>
     <br>
-    <input type="email" name="email" ngModel>
+    <input type="email" name="email" placeholder="Email" ngModel>
     <br>
-    <input type="password" name="password" ngModel>
+    <input type="password" name="password" placeholder="Password" ngModel>
     <br>
-    <button type="submit"> Save Date </button>
+    <button type="submit"> Login </button>
 </form>
+
+
+<!-- <br>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>penguin name</mat-label>
+      <input  [(ngModel)]="penguinsInterface.name" matInput placeholder="エンペラーペンギン" name="penguinname">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Favorite food</mat-label>
+        <mat-select [(ngModel)]="penguinsInterface.types" name="penguintype">
+            <mat-option [value]="">--</mat-option>
+            <mat-option *ngFor="let penguinli of penguinslist" [value]="penguinli">
+                {{penguinli}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field><p> Selected food: {{penguinsInterface.types}} </p>
+    <br>
+    <div class="example-button">
+        <button mat-raised-button color="primary" (click)="onSubmit()">Search</button>
+    </div>
+</form> -->
