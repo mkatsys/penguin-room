@@ -1,0 +1,26 @@
+<br>
+<form class="aquarium-form" #f="ngForm" (ngSubmit)="editData(f)">
+  aquarium name : 
+  <mat-form-field class="aquarium-full-width">
+    <mat-label>aquarium name</mat-label>
+    <input matInput id="aquariumNameForm" name="aquariumName" [(ngModel)]="aquarium.aquariumName">
+  </mat-form-field>
+  <br>
+  area : 
+  <mat-form-field class="aquarium-full-width">
+    <mat-label>area</mat-label>
+    <input matInput id="areaForm" name="area" [(ngModel)]="aquarium.area">
+  </mat-form-field>
+  <br>
+  <input type="file" name="img" accept="image/*" ngModel>
+  <br>
+  <br>
+  highlights : 
+  <mat-form-field class="aquarium-full-width">
+    <mat-label>highlights</mat-label>
+    <textarea matInput id="highlightsForm" name="highlights" placeholder="Ex. It makes me feel..." [(ngModel)]="aquarium.highlights"></textarea>
+  </mat-form-field>
+  <div class="aquarium-button">
+      <button type="submit" mat-raised-button color="primary">Edit</button>
+  </div>
+</form>

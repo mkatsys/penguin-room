@@ -10,7 +10,24 @@
     <button type="submit"> Login </button>
 </form>
 
+<!-- 一般的なAngularアプリケーションを作る上でいまやAsyncPipeは必ず使われるものと言っても過言ではない。
+    Observable型のデータを購読し、そのスナップショットをデータバインディングするために多用される
+    AsyncPipeは購読したObservableが最初の値を流す前に、必ず一度 null を返すようにできているのだ。
+    もとのObservableが Observable<State> だったとしても、 AsyncPipeを通すと State | null となってしまう、
+    これを「初期値null問題」と呼んでいる。
+    この問題は深刻そうに思えるが、実は多くのケースで自動的に回避されている。
+    それはAsyncPipeとよく併用される *ngIf と *ngFor が、AsyncPipeから返される null を無視するようになっているからだ。
 
+    *ngIf="source$ | async as state"
+    *ngFor="let item of source$ | async"
+    -->
+<ul>
+    <li *ngFor="let data of userData |async">
+        {{ data.name }} / {{ data.email }} / {{ data.random }}
+        <button (click)="updateData(data.id)"> Edit</button>
+        <button (click)="deleteData(data.id)"> Delete</button>
+    </li>
+</ul>
 <!-- <br>
 <form class="example-form">
     <mat-form-field class="example-full-width">

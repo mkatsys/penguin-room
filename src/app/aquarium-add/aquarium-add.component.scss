@@ -1,0 +1,27 @@
+:host{
+    display: block;
+    padding: 50px 24px 120px 24px;
+    background-color: #b0c4de;
+}
+
+.aquarium-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+}
+.aquarium-full-width {
+    width: 100%;
+}
+.aquarium-button {
+    width: 100%;
+    margin: auto;
+}
+.aquarium-button button {
+    width: 100%;
+    background-color: #808080;
+}
+.success-coment{
+    text-align: center;
+    color: red;
+}

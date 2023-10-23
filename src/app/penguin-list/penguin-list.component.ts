@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { PENGUINS } from '../model/penguins';
 // import { PENGUINSINTERFACE } from '../interfaces/penguin-interface';
 import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray} from '@angular/cdk/drag-drop';
@@ -9,6 +10,7 @@ import {MatInputModule} from '@angular/material/input';
 // import {NgFor} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-penguin-list',
@@ -83,10 +85,6 @@ export class PenguinListComponent implements OnInit {
       }
       this.penguinsSearch.length = number;
     }
-  }
-  
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.penguins, event.previousIndex, event.currentIndex);
   }
 
 }

@@ -27,6 +27,12 @@ import { PenguinListComponent } from './penguin-list/penguin-list.component';
 import { PenguinDetailComponent } from './penguin-detail/penguin-detail.component';
 import { PenguinNotFoundComponent } from './error/penguin-not-found/penguin-not-found.component';
 import { PenguinLoginComponent } from './penguin-login/penguin-login.component';
+import { AquariumListComponent } from './aquarium-list/aquarium-list.component';
+import { AquariumAddComponent } from './aquarium-add/aquarium-add.component';
+import { AquariumEditComponent } from './aquarium-edit/aquarium-edit.component';
+import { PenguinAddComponent } from './penguin-add/penguin-add.component';
+import { PenguinEditComponent } from './penguin-edit/penguin-edit.component';
+import { AquariumDetailComponent } from './aquarium-detail/aquarium-detail.component';
 
 
 @NgModule({
@@ -36,7 +42,13 @@ import { PenguinLoginComponent } from './penguin-login/penguin-login.component';
     PenguinListComponent,
     PenguinDetailComponent,
     PenguinNotFoundComponent,
-    PenguinLoginComponent
+    PenguinLoginComponent,
+    AquariumListComponent,
+    AquariumAddComponent,
+    AquariumEditComponent,
+    PenguinAddComponent,
+    PenguinEditComponent,
+    AquariumDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,7 @@
     </div>
 </form>
 <br><br><br>
-<div cdkDropList class="grid" (cdkDropListDropped)="drop($event)">
+<div cdkDropList class="grid">
     <mat-card *ngFor="let penguin of penguinsSearch" cdkDrag> 
         <img src="/assets/imges/{{penguin.img}}.png" alt="画像">
         <a routerLink="detail/{{ penguin.no }}" (click)="click(penguin)"><p>{{penguin.name}}</p></a>

@@ -1,0 +1,24 @@
+:host{
+    display: block;
+    padding: 50px 24px 120px 24px;
+    background-color: #b0c4de;
+}
+
+.grid{
+    display: grid;
+    // 余伯
+    gap: 24px;
+    //幅に合わせるrepeat(auto-fill
+    //各列の最小・最大の幅　minmax(200px, 1fr)
+    //1fr　可能な限り
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+mat-card {
+    text-align: center;
+    background-color: #fff;
+}
+
+.mat-mdc-card{
+    padding: 30px;
+}

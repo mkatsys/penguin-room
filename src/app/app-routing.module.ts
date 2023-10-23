@@ -5,6 +5,12 @@ import { PenguinListComponent } from './penguin-list/penguin-list.component';
 import { PenguinDetailComponent } from './penguin-detail/penguin-detail.component';
 import { PenguinNotFoundComponent } from './error/penguin-not-found/penguin-not-found.component';
 import { PenguinLoginComponent } from './penguin-login/penguin-login.component';
+import { AquariumListComponent } from './aquarium-list/aquarium-list.component';
+import { AquariumAddComponent } from './aquarium-add/aquarium-add.component';
+import { AquariumEditComponent } from './aquarium-edit/aquarium-edit.component';
+import { PenguinAddComponent } from './penguin-add/penguin-add.component';
+import { PenguinEditComponent } from './penguin-edit/penguin-edit.component';
+import { AquariumDetailComponent } from './aquarium-detail/aquarium-detail.component';
 
 const routes: Routes = [
   {
@@ -20,13 +26,39 @@ const routes: Routes = [
     component: PenguinListComponent
   },
   {
+    //ぺんぎん追加
+    path:'penguin/add',
+    component: PenguinAddComponent
+  },
+  {
     //ログイン
     path:'login',
     component: PenguinLoginComponent
-  },{
+  },
+  {
+    //水族館リスト
+    path:'aquarium',
+    component: AquariumListComponent
+  },
+  {
+    //水族館追加
+    path:'aquarium/add',
+    component: AquariumAddComponent
+  },
+  {
     //詳細画面
     path:'list/detail/:id',
     component: PenguinDetailComponent
+  },
+  {
+    //水族館詳細画面
+    path:'aquarium/detail/:id',
+    component: AquariumDetailComponent
+  },
+  {
+    //水族館編集画面
+    path:'aquarium/detail/:id/edit',
+    component: AquariumEditComponent
   },
   {
     //404

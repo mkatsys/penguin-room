@@ -1,0 +1,8 @@
+
+<mat-card *ngIf="aquarium" class="aquarium" routerLink="../{{ aquarium.id }}/edit">
+    <h2>{{aquarium.aquariumName}}</h2><br>
+    <p>{{aquarium.area}}</p><br>
+    <p>{{aquarium.highlights}}</p>
+    <!-- <p>{{url}}</p> -->
+    <button mat-raised-button color="primary">Fdit</button>
+</mat-card>

@@ -1,0 +1,27 @@
+<br>
+<div class="success-coment">{{successComent}}</div>
+<form class="aquarium-form" #f="ngForm" (ngSubmit)="addData(f)">
+  aquarium name : 
+  <mat-form-field class="aquarium-full-width">
+    <mat-label>aquarium name</mat-label>
+    <input matInput id="aquariumNameForm" name="aquariumName" ngModel>
+  </mat-form-field>
+  <br>
+  area : 
+  <mat-form-field class="aquarium-full-width">
+    <mat-label>area</mat-label>
+    <input matInput id="areaForm" name="area" ngModel>
+  </mat-form-field>
+  <br>
+  <input type="file" name="img" accept="image/*" ngModel (change)="getFiles($event)">
+  <br>
+  <br>
+  highlights : 
+  <mat-form-field class="aquarium-full-width">
+    <mat-label>highlights</mat-label>
+    <textarea matInput id="highlightsForm" name="highlights" placeholder="Ex. It makes me feel..." ngModel></textarea>
+  </mat-form-field>
+  <div class="aquarium-button">
+      <button type="submit" mat-raised-button color="primary">Add</button>
+  </div>
+</form>
