@@ -11,6 +11,7 @@ import { AquariumEditComponent } from './aquarium-edit/aquarium-edit.component';
 import { PenguinAddComponent } from './penguin-add/penguin-add.component';
 import { PenguinEditComponent } from './penguin-edit/penguin-edit.component';
 import { AquariumDetailComponent } from './aquarium-detail/aquarium-detail.component';
+import { YatzyComponent } from './yatzy/yatzy.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,11 @@ const routes: Routes = [
     //水族館リスト
     path:'aquarium',
     component: AquariumListComponent
+  },
+  {
+    //ヨット
+    path:'yatzy',
+    component: YatzyComponent
   },
   {
     //水族館追加

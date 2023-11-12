@@ -1,0 +1,76 @@
+:host{
+    display: block;
+    padding: 20px 24px 120px 24px;
+    background-color: #fff;
+}
+
+.yatzy-title{
+    text-align: center;
+    font-weight: bold;
+}
+
+.yatzy-main{
+    display: flex;
+    justify-content: center;
+}
+
+.yatzy-dice{
+    width: 200px;
+    text-align: center;
+}
+
+.yatzy-table{
+    margin-right: 100px;
+}
+
+th {
+    border: solid 1px;              /* 枠線指定 */
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+td {
+    border: solid 1px;              /* 枠線指定 */
+}
+
+td:hover{
+    background-color: #cfcbc0;
+}
+
+table {
+    border-collapse:  collapse;     /* セルの線を重ねる */
+    text-align: center;
+    background-color: #F7F2E7;
+}
+
+input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 60px;
+    text-align: center;
+}
+
+img{
+    width: 50px;
+}
+
+.ex_border_2{
+    border-bottom: 2px solid;
+}
+
+.ex_border_3{
+    border-bottom: 3px solid;
+}
+
+button{
+    width: 100%;
+}
+
+.yatzy-bottom{
+    text-align: center;
+}
+
+.resetbutton{
+    width: 30%;
+}

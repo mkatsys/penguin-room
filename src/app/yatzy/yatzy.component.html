@@ -1,1 +1,97 @@
-<p>yatzy works!</p>
+<h1 class="yatzy-title">Y A T Z Y</h1>
+<div class="yatzy-main">
+    <div class="yatzy-table">
+        <table align="center" cellpadding="5">
+            <tr>
+                <th></th>
+                <th>Player1</th>
+                <th>Player2</th>
+            </tr>
+            <tr>
+                <th>Ones</th>
+                <td><input placeholder="0" name="player1Ones" disabled></td>
+                <td><input placeholder="0" name="Ones" disabled></td>
+            </tr>
+            <tr>
+                <th>Twos</th>
+                <td><input placeholder="0" name="player1Twos" disabled></td>
+                <td><input placeholder="0" name="Ones" disabled></td>
+            </tr>
+            <tr>
+                <th>Threes</th>
+                <td><input placeholder="0" name="Ones" disabled></td>
+                <td><input placeholder="0" name="Ones" disabled></td>
+            </tr>
+            <tr>
+                <th>Fours</th>
+                <td><input placeholder="0" name="Ones" disabled></td>
+                <td><input placeholder="0" name="Ones" disabled></td>
+            </tr>
+            <tr>
+                <th>Fives</th>
+                <td><input placeholder="0" name="Ones" disabled></td>
+                <td><input placeholder="0" name="Ones" disabled></td>
+            </tr>
+            <tr>
+                <th class="ex_border_2">Sixes</th>
+                <td class="ex_border_2"><input placeholder="0" name="Ones" disabled></td>
+                <td class="ex_border_2"><input placeholder="0" name="Ones" disabled></td>
+            </tr>
+            <tr>
+                <th class="ex_border_3">Sum</th>
+                <td class="ex_border_3"><input placeholder="0" name="Ones" disabled></td>
+                <td class="ex_border_3"><input placeholder="0" name="Ones" disabled></td>
+            </tr>
+            <tr>
+                <th>Bonus</th>
+                <td><input placeholder="0" name="Ones" disabled></td>
+                <td><input placeholder="0" name="Ones" disabled></td>
+            </tr>
+            <tr>
+                <th>One Pair</th>
+                <td><input placeholder="0" name="Ones" disabled></td>
+                <td><input placeholder="0" name="Ones" disabled></td>
+            </tr>
+            <tr>
+                <th>Two Pair</th>
+                <td><input placeholder="0" name="Ones" disabled></td>
+                <td><input placeholder="0" name="Ones" disabled></td>
+            </tr>
+            <tr>
+                <th class="ex_border_3">Yatzy</th>
+                <td class="ex_border_3"><input placeholder="0" name="Ones" disabled></td>
+                <td class="ex_border_3"><input placeholder="0" name="Ones" disabled></td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td><input placeholder="0" name="Ones" disabled></td>
+                <td><input placeholder="0" name="Ones" disabled></td>
+            </tr>
+        </table>
+    </div>
+    <div class="yatzy-dice">
+        <button mat-raised-button color="warn" (click)="rollClick()">{{rollButtom}}</button>
+        <br><br>
+        <div class="dice-image dice-image1">
+            <img src="assets/imges/dice/{{ dice[0] }}{{ diceB[0] }}.png" alt="dice1" (click)="diceSwitch(0)">
+        </div>
+        <div class="dice-image dice-image2">
+            <img src="assets/imges/dice/{{ dice[1] }}{{ diceB[1] }}.png" alt="dice2" (click)="diceSwitch(1)">
+        </div>
+        <div class="dice-image dice-image3">
+            <img src="assets/imges/dice/{{ dice[2] }}{{ diceB[2] }}.png" alt="dice3" (click)="diceSwitch(2)">
+        </div>
+        <div class="dice-image dice-image4">
+            <img src="assets/imges/dice/{{ dice[3] }}{{ diceB[3] }}.png" alt="dice4" (click)="diceSwitch(3)">
+        </div>
+        <div class="dice-image dice-image5">
+            <img src="assets/imges/dice/{{ dice[4] }}{{ diceB[4] }}.png" alt="dice5" (click)="diceSwitch(4)">
+        </div>
+        <br>
+        <div class="success-coment"><u>{{nowUser}}</u></div>
+    </div>
+</div>
+<br><br>
+<div class="yatzy-bottom">
+<button mat-raised-button color="primary" class="resetbutton">RESET</button>
+</div>
