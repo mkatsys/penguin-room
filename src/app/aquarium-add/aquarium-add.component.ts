@@ -24,7 +24,10 @@ export class AquariumAddComponent implements OnInit {
   }
   getFiles(event : any){
     const file = event.target.files[0];
-    const path = file.name;
-    console.log(path);
+    if(file){
+      const path = file.name;
+      console.log(path);
+      console.log(file);
+    }
   }
 }

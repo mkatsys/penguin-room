@@ -15,5 +15,6 @@ export class AquariumEditComponent {
   }
   editData(f:any){
     this.aquariumService.updateAquarium(this.aquarium.id , f);
+    //listに戻る処理
   }
 }

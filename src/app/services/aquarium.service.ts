@@ -40,13 +40,24 @@ export class AquariumService {
   updateAquarium(id : string, f:any){
     const docInstance = doc(this.firestore, 'aquarium', id);
     const updateData = {
-      aquariumName : 'updatedName'
+      aquariumName : f.value.aquariumName ,
+      area : f.value.area ,
+      highlights : f.value.highlights ,
     }
     //データ更新
     updateDoc(docInstance, updateData).then(() =>{
       console.log('aquariumData updated Successfully');
     }).catch((err) =>{
       //Missing or insufficient permissions. の場合、firestore databaseのtimestampの日付を書き換える
+      console.log(err);
+    })
+  }
+
+  deleteAquarium(id : string){
+    const docInstance = doc(this.firestore, 'aquarium', id);
+    deleteDoc(docInstance).then(() =>{
+      console.log('Data deleted Successfully');
+    }).catch((err) =>{
       console.log(err);
     })
   }

@@ -33,6 +33,7 @@ import { AquariumEditComponent } from './aquarium-edit/aquarium-edit.component';
 import { PenguinAddComponent } from './penguin-add/penguin-add.component';
 import { PenguinEditComponent } from './penguin-edit/penguin-edit.component';
 import { AquariumDetailComponent } from './aquarium-detail/aquarium-detail.component';
+import { YatzyComponent } from './yatzy/yatzy.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { AquariumDetailComponent } from './aquarium-detail/aquarium-detail.compo
     AquariumEditComponent,
     PenguinAddComponent,
     PenguinEditComponent,
-    AquariumDetailComponent
+    AquariumDetailComponent,
+    YatzyComponent
   ],
   imports: [
     BrowserModule,

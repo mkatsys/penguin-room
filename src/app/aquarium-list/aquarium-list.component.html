@@ -1,6 +1,6 @@
 <br><br><br>
 <div cdkDropList class="grid">
-    <mat-card *ngFor="let data of aquarium | async" routerLink="detail/{{ data.id }}" (click)="click(data)"> 
+    <mat-card *ngFor="let data of aquarium" routerLink="detail/{{ data.id }}" (click)="click(data)"> 
         <h2>{{ data.aquariumName }}</h2>
         <p>{{ data.area }}</p>
         <p>{{ data.highlights }}</p>
