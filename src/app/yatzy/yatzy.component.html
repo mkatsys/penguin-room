@@ -9,68 +9,74 @@
             </tr>
             <tr>
                 <th>Ones</th>
-                <td><input placeholder="0" name="player1Ones" disabled></td>
-                <td><input placeholder="0" name="Ones" disabled></td>
+                <td (click)="startButtom(); fontColors.ones='#000'"><span [style.color]="fontColors.ones">{{Player1.ones}}</span></td>
+                <td><input placeholder="0" name="ones" disabled></td>
             </tr>
             <tr>
                 <th>Twos</th>
-                <td><input placeholder="0" name="player1Twos" disabled></td>
-                <td><input placeholder="0" name="Ones" disabled></td>
+                <td (click)="startButtom(); fontColors.twos='#000'"><span [style.color]="fontColors.twos">{{Player1.twos}}</span></td>
+                <td><input placeholder="0" name="twos" disabled></td>
             </tr>
             <tr>
                 <th>Threes</th>
-                <td><input placeholder="0" name="Ones" disabled></td>
-                <td><input placeholder="0" name="Ones" disabled></td>
+                <td (click)="startButtom(); fontColors.threes='#000'"><span [style.color]="fontColors.threes">{{Player1.threes}}</span></td>
+                <td><input placeholder="0" name="threes" disabled></td>
             </tr>
             <tr>
                 <th>Fours</th>
-                <td><input placeholder="0" name="Ones" disabled></td>
-                <td><input placeholder="0" name="Ones" disabled></td>
+                <td (click)="startButtom(); fontColors.fours='#000'"><span [style.color]="fontColors.fours">{{Player1.fours}}</span></td>
+                <td><input placeholder="0" name="fours" disabled></td>
             </tr>
             <tr>
                 <th>Fives</th>
-                <td><input placeholder="0" name="Ones" disabled></td>
-                <td><input placeholder="0" name="Ones" disabled></td>
+                <td (click)="startButtom(); fontColors.fives='#000'"><span [style.color]="fontColors.fives">{{Player1.fives}}</span></td>
+                <td><input placeholder="0" name="fives" disabled></td>
             </tr>
             <tr>
                 <th class="ex_border_2">Sixes</th>
-                <td class="ex_border_2"><input placeholder="0" name="Ones" disabled></td>
-                <td class="ex_border_2"><input placeholder="0" name="Ones" disabled></td>
+                <td class="ex_border_2" (click)="startButtom(); fontColors.sixes='#000'"><span [style.color]="fontColors.sixes">{{Player1.sixes}}</span></td>
+                <td class="ex_border_2"><input placeholder="0" name="sixes" disabled></td>
             </tr>
             <tr>
-                <th class="ex_border_3">Sum</th>
-                <td class="ex_border_3"><input placeholder="0" name="Ones" disabled></td>
-                <td class="ex_border_3"><input placeholder="0" name="Ones" disabled></td>
+                <th class="ex_border_3 sumclass">Sum</th>
+                <td class="ex_border_3 sumclass"><span [style.color]="fontColors.sum">{{Player1.sum}}</span></td>
+                <td class="ex_border_3 sumclass"><input placeholder="0" name="sum" disabled></td>
             </tr>
             <tr>
-                <th>Bonus</th>
-                <td><input placeholder="0" name="Ones" disabled></td>
-                <td><input placeholder="0" name="Ones" disabled></td>
+                <th class="ex_border_2">Bonus</th>
+                <td class="ex_border_2 bonusclass"><span [style.color]="fontColors.bonus">{{Player1.bonus}}</span></td>
+                <td class="ex_border_2 bonusclass"><input placeholder="0" name="bonus" disabled></td>
             </tr>
             <tr>
                 <th>One Pair</th>
-                <td><input placeholder="0" name="Ones" disabled></td>
-                <td><input placeholder="0" name="Ones" disabled></td>
+                <td (click)="startButtom(); fontColors.onePair='#000'"><span [style.color]="fontColors.onePair">{{Player1.onePair}}</span></td>
+                <td><input placeholder="0" name="onePair" disabled></td>
             </tr>
             <tr>
                 <th>Two Pair</th>
-                <td><input placeholder="0" name="Ones" disabled></td>
-                <td><input placeholder="0" name="Ones" disabled></td>
+                <td (click)="startButtom(); fontColors.twoPair='#000'"><span [style.color]="fontColors.twoPair">{{Player1.twoPair}}</span></td>
+                <td><input placeholder="0" name="twoPair" disabled></td>
             </tr>
             <tr>
-                <th class="ex_border_3">Yatzy</th>
-                <td class="ex_border_3"><input placeholder="0" name="Ones" disabled></td>
-                <td class="ex_border_3"><input placeholder="0" name="Ones" disabled></td>
+                <th>Yatzy</th>
+                <td (click)="startButtom(); fontColors.yatzy='#000'"><span [style.color]="fontColors.yatzy">{{Player1.yatzy}}</span></td>
+                <td><input placeholder="0" name="yatzy" disabled></td>
+            </tr>
+            <tr>
+                <th class="ex_border_3">Chance</th>
+                <td class="ex_border_3" (click)="startButtom(); fontColors.chance='#000'"><span [style.color]="fontColors.chance">{{Player1.chance}}</span></td>
+                <td class="ex_border_3"><input placeholder="0" name="chance" disabled></td>
             </tr>
             <tr>
                 <th>Total</th>
-                <td><input placeholder="0" name="Ones" disabled></td>
-                <td><input placeholder="0" name="Ones" disabled></td>
+                <td class="totalclass"><span [style.color]="fontColors.total">{{Player1.total}}</span></td>
+                <td class="totalclass"><input placeholder="0" name="total" disabled></td>
             </tr>
         </table>
+        +Three of Kind, Four of Kind, Full House, Small Straight, Large Straight
     </div>
     <div class="yatzy-dice">
-        <button mat-raised-button color="warn" (click)="rollClick()">{{rollButtom}}</button>
+        <button mat-raised-button color="warn" (click)="rollClick()" [disabled]="rollStop">{{rollButtom}}</button>
         <br><br>
         <div class="dice-image dice-image1">
             <img src="assets/imges/dice/{{ dice[0] }}{{ diceB[0] }}.png" alt="dice1" (click)="diceSwitch(0)">

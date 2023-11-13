@@ -12,9 +12,29 @@ export class YatzyComponent implements OnInit {
   diceB = ["b","b","b","b","b"];
   diceBool = [false,false,false,false,false];
   rollButtom = "START";
+  rollCount = 0;
+  rollStop = false;
 
   min = 1 ;
   max = 6 ;
+
+  color = '#bbb';
+
+  fontColors = {
+    ones: '#bbb',
+    twos: '#bbb',
+    threes: '#bbb',
+    fours: '#bbb',
+    fives: '#bbb',
+    sixes: '#bbb',
+    sum: '#bbb',
+    bonus: '#bbb',
+    onePair: '#bbb',
+    twoPair: '#bbb',
+    yatzy: '#bbb',
+    total: '#bbb',
+    chance: '#bbb',
+  };
 
   Player1 = {
     ones: 0,
@@ -29,7 +49,25 @@ export class YatzyComponent implements OnInit {
     twoPair: 0,
     yatzy: 0,
     total: 0,
+    chance: 0,
   };
+
+  Player1Decision = {
+    ones: false,
+    twos: false,
+    threes: false,
+    fours: false,
+    fives: false,
+    sixes: false,
+    sum: false,
+    bonus: false,
+    onePair: false,
+    twoPair: false,
+    yatzy: false,
+    total: false,
+    chance: false,
+  };
+ones: any;
 
   constructor(){
     for (let i = 0; i < this.dice.length; i++) {
@@ -41,22 +79,30 @@ export class YatzyComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
 
+  startButtom(){
+    this.rollButtom = "ROLL";
+    this.rollStop = false;
+    this.diceB = ["","","","",""];
+    this.diceBool = [true,true,true,true,true];
+    for (let i = 0; i < this.dice.length; i++) {
+      this.dice[i] = Math.floor( Math.random() * (this.max + 1 - this.min) ) + this.min ;
+    }
+    this.onesClass();
+    this.twosClass();
+    this.threesClass();
+    this.foursClass();
+    this.fivesClass();
+    this.sixesClass();
+    this.chanceClass();
+  }
+
   rollClick(){
     //STARTボタンで初期化
     if(this.rollButtom == "START"){
-      this.rollButtom = "ROLL";
-      this.diceB = ["","","","",""];
-      this.diceBool = [true,true,true,true,true];
-      for (let i = 0; i < this.dice.length; i++) {
-        this.dice[i] = Math.floor( Math.random() * (this.max + 1 - this.min) ) + this.min ;
-      }
-    //ROLLボタンでスイッチONのボタンだけサイコロを振る
+      this.startButtom();
+    //ROLLボタンでスイッチONのボタンだけサイコロを振る(最大3回まで)
     }else{
-      for (let i = 0; i < this.diceBool.length; i++) {
-        if(this.diceBool[i]){
-          this.dice[i] = Math.floor( Math.random() * (this.max + 1 - this.min) ) + this.min ;
-        }
-      }
+      this.rollButton();
     }
     this.sum++;
     if(this.sum % 2 == 0 ){
@@ -64,6 +110,33 @@ export class YatzyComponent implements OnInit {
     }else{
       this.nowUser = "turn : Player2";
     }
+  }
+
+  rollButton(){
+    if(this.rollCount < 1){
+      for (let i = 0; i < this.diceBool.length; i++) {
+        if(this.diceBool[i]){
+          this.dice[i] = Math.floor( Math.random() * (this.max + 1 - this.min) ) + this.min ;
+        }
+      }
+      this.rollCount++;
+    }else if(this.rollCount == 1){
+      for (let i = 0; i < this.diceBool.length; i++) {
+        if(this.diceBool[i]){
+          this.dice[i] = Math.floor( Math.random() * (this.max + 1 - this.min) ) + this.min ;
+        }
+      }
+      this.rollCount = 0;
+      this.rollButtom = "STOP";
+      this.rollStop = true;
+    }
+    this.onesClass();
+    this.twosClass();
+    this.threesClass();
+    this.foursClass();
+    this.fivesClass();
+    this.sixesClass();
+    this.chanceClass();
   }
   
   diceSwitch(diceNumber: number){
@@ -73,6 +146,67 @@ export class YatzyComponent implements OnInit {
     }else{
       this.diceB[diceNumber] = "";
       this.diceBool[diceNumber] = true;
+    }
+  }
+
+  onesClass(){
+    this.Player1.ones = 0;
+    for (let i = 0; i < this.dice.length; i++) {
+      if(this.dice[i] == 1){
+        this.Player1.ones += this.dice[i];
+      }
+    }
+  }
+
+  twosClass(){
+    this.Player1.twos = 0;
+    for (let i = 0; i < this.dice.length; i++) {
+      if(this.dice[i] == 2){
+        this.Player1.twos += this.dice[i];
+      }
+    }
+  }
+
+  threesClass(){
+    this.Player1.threes = 0;
+    for (let i = 0; i < this.dice.length; i++) {
+      if(this.dice[i] == 3){
+        this.Player1.threes += this.dice[i];
+      }
+    }
+  }
+
+  foursClass(){
+    this.Player1.fours = 0;
+    for (let i = 0; i < this.dice.length; i++) {
+      if(this.dice[i] == 4){
+        this.Player1.fours += this.dice[i];
+      }
+    }
+  }
+
+  fivesClass(){
+    this.Player1.fives = 0;
+    for (let i = 0; i < this.dice.length; i++) {
+      if(this.dice[i] == 5){
+        this.Player1.fives += this.dice[i];
+      }
+    }
+  }
+
+  sixesClass(){
+    this.Player1.sixes = 0;
+    for (let i = 0; i < this.dice.length; i++) {
+      if(this.dice[i] == 6){
+        this.Player1.sixes += this.dice[i];
+      }
+    }
+  }
+
+  chanceClass(){
+    this.Player1.chance = 0;
+    for (let i = 0; i < this.dice.length; i++) {
+      this.Player1.chance += this.dice[i];
     }
   }
 

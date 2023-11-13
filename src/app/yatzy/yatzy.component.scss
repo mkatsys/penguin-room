@@ -37,6 +37,10 @@ td:hover{
     background-color: #cfcbc0;
 }
 
+td.bonusclass:hover, td.totalclass:hover, td.sumclass:hover{
+    background-color: #F7F2E7;
+}
+
 table {
     border-collapse:  collapse;     /* セルの線を重ねる */
     text-align: center;
